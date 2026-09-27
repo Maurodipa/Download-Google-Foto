@@ -1,0 +1,45 @@
+# ============================================================
+# Google Takeout Fixer — requirements.txt
+# ============================================================
+#
+# Questo progetto NON usa librerie Python per la lettura/scrittura
+# di metadati EXIF/XMP: tutto è delegato all'eseguibile esterno
+# ExifTool (richiamate via subprocess).
+#
+# Le dipendenze Python qui sotto sono tutte per:
+#   - Utilità di sistema e path handling
+#   - Testing e sviluppo
+#
+# NOTA: Python >= 3.9 richiesto (usa walrus operator e type hints moderni)
+# ============================================================
+
+# Nessuna dipendenza esterna obbligatoria!
+# La libreria standard di Python copre tutto:
+#   - sqlite3       → tracciamento stato
+#   - subprocess    → chiamata ExifTool
+#   - hashlib       → SHA-256 per deduplicazione
+#   - concurrent.futures → ThreadPoolExecutor
+#   - difflib       → fuzzy matching nomi JSON
+#   - pathlib       → gestione percorsi cross-platform
+#   - json          → parsing sidecar JSON
+#   - shutil        → copia/sposta file
+#   - argparse      → CLI
+#   - logging       → log file + console
+
+# ============================================================
+# Dipendenze OPZIONALI (commentate — abilita se necessario)
+# ============================================================
+
+# tqdm >= 4.65.0
+# Barra di avanzamento più ricca nel terminale.
+# Abilita sostituendo progress_callback in main.py con tqdm.
+
+# rich >= 13.0.0
+# Output colorato e tabelle nel terminale.
+# Utile per le statistiche finali.
+
+# ============================================================
+# Dipendenze di SVILUPPO (solo per i test)
+# ============================================================
+# pytest >= 7.4.0
+# pytest-cov >= 4.1.0
